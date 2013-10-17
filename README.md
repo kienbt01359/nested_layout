@@ -21,7 +21,7 @@ In `app/controllers/products_controller.rb`
 
 ```ruby
 class ProductsController < ApplicationController                                                                                                                                                                  
-  layout "user_layout"                                                          
+  layout "product_layout"                                                          
   def index                                                                   
   end                                                                           
 end
@@ -29,6 +29,7 @@ end
 
 ##View (important)
 1. Create new partial file named "base_layout.html.erb" and put it in `app/views/layout` with content: 
+
 ```erb
 <!DOCTYPE html>                                                                 
 <html lang="ja">                                                                
@@ -47,17 +48,18 @@ end
   </body>                                                                       
 </html>
 ```
+
 2. Create 2 index files in `app/views/static_pages` and `app/views/products`
 3. Put some text in that 2 file in 
 
-```ruby
+```erb
 <% content_for(:content) do %>
   This is in static page
 <% end %>
 ```
 and 
 
-```ruby
+```erb
   <% content_for(:content) do %>
     This is in product page
   <% end %>
