@@ -8,14 +8,17 @@ user_layout and product_layout use base_layout
 ##Controller
 
 In `app/controllers/static_pages_controller.rb`
+
 ```ruby
-class StaticPagesController < ApplicationController                                                                                                                                                                  
+class StaticPagesController < ApplicationController                                                                                                                
   layout "user_layout"                                                          
   def index                                                                     
   end                                                                           
 end 
 ```
+
 In `app/controllers/products_controller.rb`
+
 ```ruby
 class ProductsController < ApplicationController                                                                                                                                                                  
   layout "user_layout"                                                          
@@ -23,6 +26,7 @@ class ProductsController < ApplicationController
   end                                                                           
 end
 ```
+
 ##View (important)
 1. Create new partial file named "base_layout.html.erb" and put it in `app/views/layout` with content: 
 ```erb
@@ -45,12 +49,14 @@ end
 ```
 2. Create 2 index files in `app/views/static_pages` and `app/views/products`
 3. Put some text in that 2 file in 
-  ```ruby
-  <% content_for(:content) do %>
-    This is in static page
-  <% end %>
-  ```
+
+```ruby
+<% content_for(:content) do %>
+  This is in static page
+<% end %>
+```
 and 
+
 ```ruby
   <% content_for(:content) do %>
     This is in product page
